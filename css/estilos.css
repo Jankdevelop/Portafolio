@@ -1,0 +1,175 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+article {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+fieldset {
+    border: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+legend {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+/* Estilos de los datos del receptor */
+.datos-receptor {
+    display: block;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+    font-size: 16px;
+}
+
+.titulo-conceptos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+#n-conceptos {
+    width: 50px;
+    font-size: 16px;
+}
+
+#generar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Estilos del destino */
+#destino {
+    margin-top: 20px;
+}
+
+#destino-select {
+    display: block;
+    margin-top: 10px;
+    padding: 5px;
+    width: 100%;
+    font-size: 16px;
+}
+
+/* Estilos de la reservación */
+#reservacion {
+    margin-top: 20px;
+}
+
+#reservacion label {
+    font-size: 16px;
+}
+
+#reservacion-edad {
+    margin-top: 10px;
+}
+
+#reservacion-edad label {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+#reservacion-edad-input {
+    width: 50px;
+    font-size: 16px;
+}
+
+/* Estilos de los conceptos */
+.agregar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#conceptos {
+    margin-top: 20px;
+}
+
+.concepto {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.concepto input {
+    margin-right: 10px;
+    padding: 5px;
+    width: 60%;
+    font-size: 16px;
+}
+
+.concepto button {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Estilos de los totales */
+#totales {
+    margin-top: 20px;
+    text-align: right;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    }
+    
+    th, td {
+    text-align: left;
+    padding: 8px;
+    }
+    
+    th {
+    background-color: #4CAF50;
+    color: white;
+    }
+    
+    tr:nth-child(even) {
+    background-color: #f2f2f2;
+    }
