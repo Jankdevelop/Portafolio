@@ -1,81 +1,57 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
+<html>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilos.css">
-    <title> Ticket de compra </title>
-</head>
-<body>
+    <title>Compra de Boletos de Transporte</title>
+  </head>
+  <body>
+    <h1>Compra de Boletos de Transporte</h1>
+    <h2>Destinos Disponibles:</h2>
+    <ul>
+      <li><img src="destino1.png" alt="Destino 1"><br>Hora de Salida: 9:00 am, Hora de Llegada: 11:00 am, Costo: $100</li>
+      <li><img src="destino2.png" alt="Destino 2"><br>Hora de Salida: 10:00 am, Hora de Llegada: 12:00 pm, Costo: $100</li>
+      <li><img src="destino3.png" alt="Destino 3"><br>Hora de Salida: 11:00 am, Hora de Llegada: 1:00 pm, Costo: $100</li>
+      <li><img src="destino4.png" alt="Destino 4"><br>Hora de Salida: 12:00 pm, Hora de Llegada: 2:00 pm, Costo: $100</li>
+    </ul>
+    <h2>Seleccione su Destino:</h2>
+<select id="destino">
+  <option value="destino1">Destino 1</option>
+  <option value="destino2">Destino 2</option>
+  <option value="destino3">Destino 3</option>
+  <option value="destino4">Destino 4</option>
+</select><br>
 
-    <header>
-		<h1>TRAVELBUSS</h1>
-	</header>
+<h2>Cantidad de Boletos para Adultos:</h2>
+<input type="number" id="cantidadAdultos" value="0" min="0"><br>
 
-    <section>
-        <article>
-            <fieldset id="Receptor">
-                <legend>Datos del usuario: </legend>
-                <input class="datos-receptor" type="text" id="rs" placeholder="Nombre Y Apellido">
-                <input class="datos-receptor" type="text" id="rfc" placeholder="RFC">         
-                <label id="titulo-conceptos" class="titulo-conceptos"> # de personas:
-                    <input id="n-conceptos" type="number"  min="0" max="20" value="0">
-                    <button id="generar" onclick="generar();">Realizar</button>
-                </label>
+<h2>Cantidad de Boletos para Niños:</h2>
+<input type="number" id="cantidadNinos" value="0" min="0"><br>
 
-                <fieldset id="destino">
-                    <legend>Destino:</legend>
-                    <select id="destino-select">
-                        <option value="guanajuato">Guanajuato</option>
-                        <option value="cancun">Cancún</option>
-                        <option value="monterrey">Monterrey</option>
-                    </select>
-                </fieldset>
+<h2>Seleccione la Fecha y Hora del Viaje:</h2>
+<input type="datetime-local" id="fechaHora"><br>
 
-                <fieldset id="reservacion">
-                    <legend>Reservación:</legend>
-                    <label><input type="checkbox" id="reservacion-menor">¿Reservar para menor de edad?</label>
-                    <div id="reservacion-edad" style="display: none;">
-                        <label>Edad del menor:</label>
-                        <input type="number" id="reservacion-edad-input">
-                    </div>
-                </fieldset>
-                
-                
-            </fieldset>
-            
-            <fieldset id="cuerpo">
-                <legend>Conceptos: </legend>
-                <h1>Costos:  Adultos = $100 Niños =$50</h1>
-                <div id="conceptos">
-                </div>
-               
-                <button id="agregar" class="agregar" onclick="agregarConceptos();">Agregar Concepto</button>
-                <button id="ticket" class="ticket" onclick="generarTicket();">Generar Ticket</button>
-            </fieldset>
-            
-            <fieldset id="totales">
-                <table>
-                    <tr>
-                        <th>Subtotal:</th>
-                        <td id="subTotal">0.00</td>
-                    </tr>
-                    <tr>
-                        <th>IVA:</th>
-                        <td id="iva">0.00</td>
-                    </tr>
-                    <tr>
-                        <th>Total:</th>
-                        <td id="total">0.00</td>
-                    </tr>
-                </table>
-            </fieldset>
-        </article>
-    </section>
-    
+<h2>Seleccione el Tipo de Asiento:</h2>
+<select id="tipoAsiento">
+  <option value="economica">Económica</option>
+  <option value="premium">Premium</option>
+  <option value="primeraClase">Primera Clase</option>
+</select><br>
 
-    <footer> Hecho por JUANKI</footer>
-    <script src="js/script.js"></script>
+<button onclick="generarBoletoAdulto()">Generar Boleto de Adulto</button>
+<button onclick="generarBoletoNino()">Generar Boleto de Niño</button>
+
+<h2>Boletos Generados:</h2>
+<div id="boletosGenerados"></div>
+
+<button onclick="abrirTicket()">Generar Ticket</button>
+<h2>FAQ - Preguntas Frecuentes:</h2>
+<h3>¿Cómo puedo cancelar mi boleto?</h3>
+<p>Puedes cancelar tu boleto comunicándote con nuestro servicio al cliente al teléfono 123456789 </p>
+<h3>¿Puedo cambiar la fecha y hora de miboleto?</h3>
+<p>Sí, puedes cambiar la fecha y hora de tu boleto comunicándote con nuestro servicio al cliente al teléfono 123456789 </p>
+<script src="js/script.js"></script>
 
 </body>
 </html>

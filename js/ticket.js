@@ -1,38 +1,55 @@
-let conceptos=JSON.parse(localStorage.getItem('ticket'));
-let rs=JSON.parse(localStorage.getItem('rs'));
-let rfc=JSON.parse(localStorage.getItem('rfc'));
-let subt=JSON.parse(localStorage.getItem('s'));
-let iv=JSON.parse(localStorage.getItem('i'));
-let tota=JSON.parse(localStorage.getItem('t'));
-(
-    function(){
-        let con='';
-        for(var i=0; i<conceptos.length; i++){
-            con+='<div class="divs"><label>Cantidad<div name="cantidad" id="cantidad">'+conceptos[i].cantidad+'</div></label>';
-            con+='<label>Descripcion<div name="descripcion" id="descripcion">'+conceptos[i].descripcion+'</div></label>';
-            con+='<label>Valor Unitario<div name="valorUnitario" id="valorUnitario">'+conceptos[i].valorUnitario+'</div></label>';
-            con+='<label>Importe<div name="importe" id="importe">'+conceptos[i].importes+'</div></label></div>';
-        }
-        document.getElementById('conceptos').innerHTML=con;
-        document.getElementById('rs').innerHTML=rs;
-        document.getElementById('rfc').innerHTML=rfc;
-        document.getElementById('subtotal').innerHTML=subt;
-        document.getElementById('iva').innerHTML=iv;
-        document.getElementById('total').innerHTML=tota;
+function abrirTicket() {
+  // Abrir la ventana del ticket
+  let ticketVentana = window.open("", "ticket", "width=600,height=600");
 
-        console.log(subt);
-    }
-)();
+  // Agregar contenido HTML a la ventana del ticket
+  ticketVentana.document.write("<html><head><title>Ticket</title></head><body>");
 
-function generarTicket() {
-    var razonSocial = document.getElementById("razonSocial").value;
-    var rfc = document.getElementById("rfc").value;
-    var conceptos = document.getElementById("conceptos").value;
-    var subtotal = parseFloat(document.getElementById("subtotal").value);
-    var iva = subtotal * 0.16;
-    var total = subtotal + iva;
-    var destino = document.getElementById("destino").value;
-    var reservaNinos = document.getElementById("reservaNinos").checked;
-    var ticket = "Razón Social: " + razonSocial + "\nRFC: " + rfc + "\nConceptos: " + conceptos + "\nSubtotal: $" + subtotal.toFixed(2) + "\nIVA: $" + iva.toFixed(2) + "\nTotal: $" + total.toFixed(2) + "\nDestino: " + destino + "\nReservación para niños: " + (reservaNinos ? "Sí" : "No");
-    alert(ticket);
+  // Imprimir los datos del usuario en la ventana del ticket
+  ticketVentana.document.write("<h1>Datos del Usuario:</h1>");
+  ticketVentana.document.write("<p>Nombre: " + usuario.nombre + "</p>");
+  ticketVentana.document.write("<p>Correo electrónico: " + usuario.correo + "</p>");
+
+  // Imprimir los boletos generados en la ventana del ticket
+  ticketVentana.document.write("<h1>Boletos Generados:</h1>");
+  let subtotal = 0;
+  for (let i = 0; i < boletos.length; i++) {
+    let boleto = boletos[i];
+    let costoBoleto = boleto.costoBoleto;
+    let cantidad = boleto.cantidad;
+    let costoViaje = boleto.costoViaje;
+    let tipoAsiento = boleto.tipoAsiento;
+    let destino = boleto.destino;
+    let fechaHora = boleto= boleto.fecha;
+    let hora = boleto.hora;
+    // Calcular el subtotal del boleto
+let subtotalBoleto = costoBoleto * cantidad;
+subtotal += subtotalBoleto;
+
+// Imprimir los datos del boleto en la ventana del ticket
+ticketVentana.document.write("<h2>Boleto " + (i+1) + "</h2>");
+ticketVentana.document.write("<p>Tipo de asiento: " + tipoAsiento + "</p>");
+ticketVentana.document.write("<p>Destino: " + destino + "</p>");
+ticketVentana.document.write("<p>Fecha: " + fecha + "</p>");
+ticketVentana.document.write("<p>Hora: " + hora + "</p>");
+ticketVentana.document.write("<p>Cantidad: " + cantidad + "</p>");
+ticketVentana.document.write("<p>Costo por boleto: $" + costoBoleto.toFixed(2) + "</p>");
+ticketVentana.document.write("<p>Subtotal: $" + subtotalBoleto.toFixed(2) + "</p>");
+
+// Calcular el total
+let impuesto = subtotal * 0.16;
+let total = subtotal + impuesto;
+
+// Imprimir el total en la ventana del ticket
+ticketVentana.document.write("<h1>Total:</h1>");
+ticketVentana.document.write("<p>Subtotal: $" + subtotal.toFixed(2) + "</p>");
+ticketVentana.document.write("<p>Impuesto: $" + impuesto.toFixed(2) + "</p>");
+ticketVentana.document.write("<p>Total: $" + total.toFixed(2) + "</p>");
+
+// Cerrar el body y html de la ventana del ticket
+ticketVentana.document.write("</body></html>");
+
+// Imprimir la ventana del ticket
+ticketVentana.print();
+}
 }

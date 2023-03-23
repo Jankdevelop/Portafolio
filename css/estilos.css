@@ -1,175 +1,91 @@
 /* Estilos generales */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
-    text-align: center;
+  text-align: center;
+  margin: 20px 0;
 }
 
-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px;
+h2 {
+  margin: 15px 0;
 }
 
-article {
-    width: 100%;
-    max-width: 600px;
-    margin-bottom: 20px;
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-fieldset {
-    border: none;
-    margin: 20px 0;
-    padding: 0;
+li {
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  width: 300px;
+  margin-bottom: 20px;
 }
 
-legend {
-    font-size: 20px;
-    font-weight: bold;
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-/* Estilos del encabezado */
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
+select, input {
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 10px;
+  width: 100%;
 }
 
-/* Estilos de los datos del receptor */
-.datos-receptor {
-    display: block;
-    margin-bottom: 10px;
-    padding: 5px;
-    width: 100%;
-    font-size: 16px;
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
 }
 
-.titulo-conceptos {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-    font-size: 20px;
+#boletosGenerados {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
-#n-conceptos {
-    width: 50px;
-    font-size: 16px;
+/* Estilos específicos */
+li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-#generar {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-/* Estilos del destino */
 #destino {
-    margin-top: 20px;
+  width: 100%;
 }
 
-#destino-select {
-    display: block;
-    margin-top: 10px;
-    padding: 5px;
+#cantidadAdultos, #cantidadNinos, #fechaHora, #tipoAsiento {
+  width: 60%;
+}
+
+@media (max-width: 768px) {
+  li {
     width: 100%;
-    font-size: 16px;
-}
+  }
 
-/* Estilos de la reservación */
-#reservacion {
-    margin-top: 20px;
-}
-
-#reservacion label {
-    font-size: 16px;
-}
-
-#reservacion-edad {
-    margin-top: 10px;
-}
-
-#reservacion-edad label {
-    margin-right: 10px;
-    font-size: 16px;
-}
-
-#reservacion-edad-input {
-    width: 50px;
-    font-size: 16px;
-}
-
-/* Estilos de los conceptos */
-.agregar {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-#conceptos {
-    margin-top: 20px;
-}
-
-.concepto {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-    font-size: 16px;
-}
-
-.concepto input {
-    margin-right: 10px;
-    padding: 5px;
-    width: 60%;
-    font-size: 16px;
-}
-
-.concepto button {
-    background-color: #333;
-    color: #fff;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-/* Estilos de los totales */
-#totales {
-    margin-top: 20px;
-    text-align: right;
-}
-
-table {
-    border-collapse: collapse;
+  select, input {
     width: 100%;
-    }
-    
-    th, td {
-    text-align: left;
-    padding: 8px;
-    }
-    
-    th {
-    background-color: #4CAF50;
-    color: white;
-    }
-    
-    tr:nth-child(even) {
-    background-color: #f2f2f2;
-    }
+  }
+}
